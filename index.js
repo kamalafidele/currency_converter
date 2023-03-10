@@ -9,9 +9,8 @@ const convert = async (from, to, amount) => {
     const URL = `https://api.apilayer.com/exchangerates_data/convert?from=${from}&to=${to}&amount=${amount}`;
     try {
         const { data } = await axios.get(URL, { headers: { 'apiKey': API_KEY }});
-
-        
         console.log('\n##############################################################');
+
         if (data.success) {
             console.log(`${amount} in ${from} equals to ${data.result} in ${to}`);
         } else {
